@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1"
+  },
+  "name": "stats-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^20.8.4"
+  },
+  "scripts": {
+    "start:run": "nodemon build/index.js",
+    "start:build": "tsc -w",
+    "start": "concurrently npm:start:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
