@@ -1,13 +1,11 @@
-import {CsvFileReader} from "./CsvFileReader";
+import {MatchResult} from "./MatchResult";
+import {MatchReader} from "./MatchReader";
 
-const footballMatchReader = new CsvFileReader('football.csv');
+const footballMatchReader = new MatchReader('football.csv');
 footballMatchReader.read();
-enum MatchResult {
-    HomeWin = 'H',
-    AwayWin = 'A',
-    Draw = 'D'
-}
 
+// console.log('reader data', footballMatchReader.data);
+const dateOfFirstMatch = footballMatchReader.data[0][5];
 let manUnitedWins = 0;
 
 for (let match of footballMatchReader.data) {
@@ -17,5 +15,4 @@ for (let match of footballMatchReader.data) {
         manUnitedWins++;
     }
 }
-// console.log('matches', matches);
 console.log(`Man United won ${manUnitedWins} games.`);
